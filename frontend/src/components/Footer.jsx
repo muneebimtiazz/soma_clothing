@@ -7,26 +7,26 @@ import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div>
+    <div >
       <div className='hidden text-white bg-black md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6 lg:gap-10 md:pl-25 lg:pl-35 py-10 '>
         <div>
           <GiTrophyCup className='text-4xl' />
-          <p className='text-xl'>High Quality</p>
+          <p>High Quality</p>
           <p>Clothes are of best material</p>
         </div>
         <div>
           <AiOutlineSafety className='text-4xl' />
-          <p className='text-xl'>Warrenty Protection</p>
+          <p>Warrenty Protection</p>
           <p>Over 2 Years</p>
         </div>
         <div>
           <MdOutlineLocalShipping className='text-4xl'/>
-          <p className='text-xl'>Free Shipping</p>
+          <p>Free Shipping</p>
           <p>Order over 100$</p>
         </div>
         <div>
           <MdSupportAgent className='text-4xl'/>
-          <p className='text-xl'>24/7 support</p>
+          <p>24/7 support</p>
           <p>Dedicated Support</p>
         </div>
       </div>

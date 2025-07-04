@@ -57,15 +57,15 @@ const Product = () => {
           
           <div className="mt-5 sm:mt-0 flex-col pl-3 pr-3 justify-center items-center space-y-8 ">
           <div className="space-y-2">
-              <h1 className="text-3xl font-semibold">{productData.name}</h1>
+                    <h1 className='text-2xl sm:text-4xl font-semibold uppercase'>{productData.name}</h1>
               <p className={productData.stock > 5 ? "text-green-600" : "text-red-600"}>
                 Stock : {productData.stock}
               </p>
-              <p className="text-2xl">
+              <p className="text-base">
                 {currency}
                 {productData.price}
               </p>
-              <p className="pb-5">{productData.description}</p>
+              <p className="pb-5 text-justify">{productData.description}</p>
               <hr />
           </div>
 
@@ -77,29 +77,30 @@ const Product = () => {
                 <button
                   key={index}
                   onClick={() => setSelectedSize(item)}
-                  className={`border w-7 transition-colors duration-200 ${selectedSize === item? "bg-black text-white border-black" : "bg-white text-black"}`}>
+                  className={`w-9 h-9 border rounded-md text-sm font-medium transition-colors duration-200  ${selectedSize === item? "bg-black text-white border-black" : "bg-white text-black border-gray-300 hover:bg-gray-100"}`}>
                   {item}
                 </button>
               ))}
             </div>
 
             <div className="flex items-center justify-between ">  
-
-              <div>
+              <div className="flex items-center">
                 {/* decr button */}
-                <button className="border rounded-l-sm px-3 py-2 hover:bg-black hover:text-white transition-colors" onClick={() => count > 0 && setCount(count - 1)}>-</button>
+                <button className="w-11 h-11 border border-black rounded-l-md flex items-center justify-center text-xl font-medium 
+               hover:bg-black hover:text-white transition-colors duration-200" onClick={() => count > 0 && setCount(count - 1)}>-</button>
 
                 {/* display input field */}
                 <input
                   type="text"
                   value={count}
-                  className="w-20 h-11 text-center border"
+                  className="w-16 h-11 text-center border-t border-b border-black outline-none text-base"
                   onChange={(e) => setCount(Number(e.target.value))}
                 />
 
                 {/*incr button */}
                 <button
-                  className="border rounded-r-sm px-3 py-2 hover:bg-black hover:text-white transition-colors"
+                  className="w-11 h-11 border border-black rounded-r-md flex items-center justify-center text-xl font-medium 
+               hover:bg-black hover:text-white transition-colors duration-200"
                   onClick={() => setCount(count + 1)}>+
                 </button>
               </div>
@@ -107,7 +108,7 @@ const Product = () => {
               <div>
                 {/* add to cart button */}
                 <button
-                  className="px-8 py-2 text-black border-1 bg-white hover:bg-black hover:text-white transition-colors w-full"
+                  className="py-2 px-10 rounded text-black border-1 bg-white hover:bg-black hover:text-white transition-colors"
                   onClick={() => addToCart(productId, selectedSize, count)}>Add to Cart
                 </button> 
               </div>

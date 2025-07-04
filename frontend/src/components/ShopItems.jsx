@@ -4,7 +4,6 @@ import ProductItem from './ProductItem';
 import { TbFilterPause } from "react-icons/tb";
 import { MdOutlineSort } from "react-icons/md";
 
-
 const ShopItems = () => {
   const { products  } = useContext(ShopContext);  
 
@@ -39,42 +38,41 @@ const ShopItems = () => {
 return (
   <>
   {/* filter header */}
-  <div className='bg-black text-white flex justify-center space-x-5 sm:space-x-150 py-2'>
-    <div className='flex flex-wrap sm:space-x-5'>
-      <div className='flex space-x-1 sm:space-x-5'>
-        <TbFilterPause className='text-2xl' />
+  <div className='bg-black text-white flex items-center justify-center text-sm space-x-5 sm:space-x-150 py-2'>
+    
+    <div className='flex items-center space-x-2'>
+      <div className='flex items-center space-x-2'>
+        <TbFilterPause className='text-base' />
         <p>Filter</p>
         {/* filter */}
-        <select 
-          className='bg-white text-black'
-          value={category}
-          onChange={handleCategory}
-        >
-          <option value="">Default</option>
+        <select className='bg-white text-black rounded w-20' value={category} onChange={handleCategory}>
+          <option  value="">Default</option>
           <option value="Polo">Polo</option>
           <option value="Shirts">Shirts</option>
           <option value="Jeans">Jeans</option>
         </select>
       </div>
+
       <div>
-          <p className='hidden sm:block'>| &nbsp; Showing 1-{visibleProducts.length} of {processedProducts.length} results</p>
+          <p className='hidden sm:block'>|&nbsp; Showing 1-{visibleProducts.length} of {processedProducts.length} results</p>
       </div>
     </div>
-    <div className='flex space-x-1 sm:space-x-5'>
-      <MdOutlineSort  className='text-2xl' />
+
+    <div className='flex items-center space-x-2'>
+      <MdOutlineSort className='text-base'/>
       <p>Sortby</p>
       {/* sortby */}
-      <select 
-        className='bg-white text-black'
-        value={sortby}
-        onChange={handleSortBy}
-      >
-        <option value="">Relavent</option>
-        <option value="high to low">High-to-Low</option>
+      <select className='bg-white rounded text-black w-20' value={sortby} onChange={handleSortBy}>
+        <option value="" className='text-xs'>Relavent</option>
+        <option value="high to low" >High-to-Low</option>
         <option value="low to high">Low-to-High</option>
       </select>
     </div>
+    
   </div>
+      <div>
+      <p className='flex sm:hidden text-sm justify-evenly mt-10'>&nbsp; Showing 1-{visibleProducts.length} of {processedProducts.length} results</p>
+    </div>
       
   {/* shop items */}
   <div className="container mx-auto px-4 py-8">
@@ -85,13 +83,13 @@ return (
         );
       })}
     </div>
-    <div className="flex justify-center mt-8">
+    <div className="flex justify-center">
         <button 
           onClick={loadMoreProducts}
-          className="py-2 px-20 text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">
+          className="py-2 px-15 rounded text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">
           Show More
         </button>
-      </div>
+    </div>
   </div>
   </>
 );

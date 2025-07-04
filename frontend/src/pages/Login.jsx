@@ -3,33 +3,25 @@ import { NavLink } from 'react-router-dom'
 
 const Login = () => {
   return (
-    <div className='flex items-center justify-center px-10 sm:px-0 py-10 sm:py-15'>
-      <div className=' w-full max-w-sm space-y-5 mt-10 mb-10 sm:mt-15 sm:mb-15'>
-        <div>
-          <p className='text-center'>Welcome Back!</p>
-          <p className='text-2xl font-semibold text-center mb-6'>Login</p>
-          <div className='space-y-4 mb-4'>
-            <input className='w-full px-4 py-3 bg-gray-100 ' type="email" placeholder='Email' />
-            <input className='w-full px-4 py-3 bg-gray-100 ' type="password" placeholder='Password' />
-          </div>
-          <button className="w-full px-4 py-3 text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">
-            Sign in
+    <div className='flex items-center bg-white mt-30 sm:mt-40'>
+      <div className='w-[90%] md:w-[40%] px-5 sm:px-20 mx-auto text-center space-y-1'>
+        <p>Welcome Back!</p>
+        <p className='text-lg'>Get 50% off sale at soma clothing</p>
+        <form className='flex flex-col gap-4'>
+          <input type="text" placeholder='Email' className='w-full rounded bg-gray-100 px-4 py-3 text-sm text-black placeholder-[#201E1F] focus:outline-none focus:ring-2 focus:ring-[#201E1F]'/>
+          <input type="password" placeholder='Password' className='w-full rounded bg-gray-100 px-4 py-3 text-sm text-black placeholder-[#201E1F] focus:outline-none focus:ring-2 focus:ring-[#201E1F]'/>
+      <div className="flex justify-center">
+          <button 
+            className="py-2 w-full rounded text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">
+            Show More
           </button>
-        </div>
+      </div>
+        </form>
 
-        <div>
-          <div className='flex'>
-            <p>Don't have a account? </p>
-            <NavLink to='signup'><p className='text-blue-600 underline'>Sign up</p></NavLink>
-          </div>
-          <div className='flex'>
-            <p>Forgot Password? </p>
-            <NavLink to='/reset'><p className='text-blue-600 underline'>Reset password</p></NavLink>
-          </div>
+        <div className='text-left text-sm mt-3'>
+          <p>Don't have a account?<span className='text-blue-800 underline'><NavLink to='/register'>Register</NavLink></span></p>
+          <p>Forgot Password?<span className='text-blue-800 underline'><NavLink to='/reset'>Reset password</NavLink></span></p>
         </div>
-
-        
-        
       </div>
     </div>
 

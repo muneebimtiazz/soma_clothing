@@ -1,29 +1,28 @@
 
 import Banner from '../assets/contact_banner.png'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock} from 'react-icons/fa'
 
 const Contact = () => {
   return (
-    <div className="max-w-7xl mx-auto sm:px-6 ">
+    <div className="max-w-7xl text-xs mx-auto sm:px-6 ">
           <div className='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
               <img src={Banner} alt="banner" className="w-full h-auto object-contain" />
           </div>
-          <div className='text-center py-5 m-10 md:m-0'>
+          <div className='text-center py-5 m-10 md:m-none'>
 
-            <h2 className="text-3xl font-bold">Get In Touch With Us</h2>
+            <h1 className='text-2xl sm:text-4xl text-center font-semibold uppercase '>get in touch with us</h1>
             <p className="text-black">
               For More Information About Our Product & Services. Please Feel Free To Drop Us <br /> An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!
             </p>
           </div>
       
-      <div className="py-16 grid md:grid-cols-2 m-10 md:m-5">
+      <div className="grid md:grid-cols-2 m-10 md:m-5">
 
        {/* Contact Cards */}
 <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 font-[Open Sans]">
       {/* Left Text Block */}
       <div>
-        <p className="text-lg text-gray-800">
-          For any inquiries, collaborations, or just to say hello, we’d love to hear from you! Reach out, and let’s connect.
+        <p className="text-sm text-justify text-gray-800">
+          For any inquiries, collaborations, or just to say hello, we'd love to hear from you! Reach out, and let’s connect.
         </p>
       </div>
 
@@ -31,7 +30,7 @@ const Contact = () => {
       <div className="space-y-10">
         <div>
           <h3 className="text-xl font-bold mb-2">PRESS</h3>
-          <p className="text-gray-700">
+          <p className="text-gray-700 text-justify">
             SOMA CLOTHING CO. (MILAN OFFICE)<br />
             Centro Direzionale Milanofiori, Strada 2,<br />
             PALAZZO C1, 20057 Assago Milano, Italy<br /><br />
@@ -62,8 +61,7 @@ const Contact = () => {
     </div>
 
         {/* Contact Form */}
-        <div className="bg-white mt-5 mb-5 p-5 rounded-xl shadow-sm border border-gray-100">
-          <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+        <div className="bg-white my-5 p-5 rounded shadow-sm border border-gray-100">
           <form className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -108,16 +106,19 @@ const Contact = () => {
               </label>
               <textarea
                 id="message"
-                rows="5"
+                rows="10"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                 required
               ></textarea>
             </div>
 
-        <button type='submit'
-          className="py-2 w-full text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">
-          Send
-        </button>
+      <div className="flex justify-center">
+          <button 
+           type='submit'
+            className="py-2 px-15 rounded text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">
+            Show More
+          </button>
+      </div>
           </form>
         </div>
       </div>

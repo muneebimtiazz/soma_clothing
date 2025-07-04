@@ -1,24 +1,20 @@
-import { GoAlert } from "react-icons/go";
-import { NavLink } from "react-router-dom";
-
+import img from '../assets/404-error.png'
+import { NavLink } from 'react-router-dom'
+// import { useParams } from 'react-router-dom';
 const NotFound = () => {
+    // const { id } = useParams();
+    const fullUrl = window.location.href
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
-      <div className="text-center">
-        <GoAlert className="w-16 h-16 text-black-500 mx-auto mb-4" />
-        <h1 className="text-6xl font-bold mb-2">404</h1>
-        <p className="text-xl font-medium mb-4">Page Not Found</p>
-        <p className="text-gray-600 mb-6">
-          Sorry, the page you're looking for doesn't exist or has been moved.
-        </p>
-        <NavLink
-          to="/"
-          className="py-2 px-20 text-black border-1 bg-white hover:bg-black hover:text-white transition-colors"
-        >
-          Go Home
-        </NavLink>
+    
+    <div className='my-10 max-w-[80%] mx-auto flex flex-col gap-5 justify-center items-center'>
+      <img src={img} alt="404" className='w-40 h-40' />
+      <div className='text-center text-xs sm:text-sm'> 
+        <p>That's an error</p>
+        <p>The requested <span className='font-semibold'>{fullUrl}</span> was not found on this server.That's all we know </p>
+        <NavLink to='/'><span className='text-blue-700 underline hover:text-blue-900'>Go to Homepage Now</span></NavLink>
       </div>
-  </div>
+      
+    </div>
   )
 }
 

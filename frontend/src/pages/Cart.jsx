@@ -2,7 +2,7 @@ import {useState, useContext, useEffect } from "react"
 import { ShopContext } from "../context/ShopContext"
 import { MdDeleteOutline } from "react-icons/md";
 import { NavLink } from 'react-router-dom'
-import { BsCart4 } from "react-icons/bs";
+import shoppingbag from '../assets/shopping-bag.png'
 
 // {
 // polo003:{S:6}
@@ -37,9 +37,9 @@ const Cart = () => {
       <div className="flex justify-between flex-col lg:flex-row lg:items-start gap-10 sm:m-10 max-w-full">
       {
         cartData.length===0
-          ?<div className="flex flex-col items-center justify-center min-h-screen w-full space-y-10 ">
-            <BsCart4 className=" text-9xl w-full" />
-            <p className="text-4xl">Your cart is empty</p>  
+          ?<div className="flex flex-col items-center h-full w-full mt-30 sm:mt-40">
+            <img className="w-30 h-30" src={shoppingbag} alt="" />
+            <p className="text-base">Your cart is empty</p>  
            </div>
           :<div className= "p-6 space-y-2.5 rounded-xl h-fit w-full lg:w-1/2">{cartData.map((cartItem) => {
               const matchedProduct = products.map(item=>{    //[{},{},{}]
@@ -61,17 +61,29 @@ const Cart = () => {
             return (
             //  display cart items
                 <div className="flex">
-                  <div className="w-[30%] relative" >
-                    <img className="w-full h-full object-cover object-center" src={matchedProduct.image} alt={cartItem.__id} />
-                  </div>
-                  <div className="w-[70%] pl-5 pr-5">
-                    <p className="text-xl font-semibold">{matchedProduct.name}</p>
-                    <p className="text-gray-400">Category: {matchedProduct.category}</p>
-                    <p className="text-gray-400">Size: {cartItem.size}</p>
-                    <p className="text-gray-400">Quantity:{cartItem.quantity}</p>
-                    <p className="text-gray-400 font-semibold">Price:{(matchedProduct.sumUp).toFixed(2)}</p>
-                    <MdDeleteOutline onClick={() => handleDelete(cartItem.__id, cartItem.size)} className="text-red-600 text-2xl mt-4 cursor-pointer" />
-                  </div>
+          <div className="flex flex-col sm:flex-row items-center gap-4 p-4">
+            <div className="w-full sm:w-[30%] aspect-square relative">
+              <img
+                src={matchedProduct.image}
+                alt={cartItem.__id}
+                className="w-full h-full object-cover object-center rounded-md"
+              />
+            </div>
+            <div className="w-full sm:w-[70%] flex flex-col gap-2 px-1 sm:px-5">
+              <p className="text-lg sm:text-xl font-semibold">{matchedProduct.name}</p>
+              <p className="text-sm text-gray-600">Category: <span className="text-black">{matchedProduct.category}</span></p>
+              <p className="text-sm text-gray-600">Size: <span className="text-black">{cartItem.size}</span></p>
+              <p className="text-sm text-gray-600">Quantity: <span className="text-black">{cartItem.quantity}</span></p>
+              <p className="text-base font-medium">Price: <span className="text-black">${matchedProduct.sumUp.toFixed(2)}</span></p>
+              
+              {/* Delete Icon */}
+              <MdDeleteOutline
+                onClick={() => handleDelete(cartItem.__id, cartItem.size)}
+                className="text-red-600 text-2xl mt-2 hover:scale-110 transition-transform duration-200 self-start cursor-pointer"
+              />
+            </div>
+          </div>
+
                 </div>
                 
               );
@@ -79,8 +91,8 @@ const Cart = () => {
       }
 
       {/* bill checkout */}
-      {(cartData.length!=0) && <div className="bg-gray-100 p-6 space-y-2.5 rounded-xl h-fit w-full lg:w-1/4">
-        <h1 className="font-semibold text-2xl">Order Summary</h1>
+      {(cartData.length!=0) && <div className="bg-gray-100 p-6 space-y-2.5 rounded-xl h-fit w-full lg:w-1/5">
+        <h1 className="font-semibold text-2xl uppercase text-center">Order Summary</h1>
         <div className="space-y-2 text-sm">
           <p className="flex justify-between ">
             <span>Subtotal</span>
@@ -94,7 +106,7 @@ const Cart = () => {
             <span>Discount</span>
             <span>-</span>
           </p>
-          <hr className="mt-5 mb-5 text-gray-200" />
+          <hr className="my-5 text-gray-200" />
           <p className="flex justify-between ">
             <span className="font-semibold text-xl">Total </span>
             <span className="font-semibold text-xl">{currency}{(subtotal + delivery_fee).toFixed(2)}</span>
@@ -102,9 +114,10 @@ const Cart = () => {
         </div>
 
 
-        <NavLink to="/login">
-          <button className="py-2 w-full text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">Place Order</button>
+        <NavLink to="/login" className="flex justify-center">
+          <button className="py-2 w-full rounded text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">Place Order</button>
         </NavLink>
+
 
       </div>  }
 

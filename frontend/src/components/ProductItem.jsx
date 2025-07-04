@@ -10,12 +10,11 @@ const ProductItem = ({id,name,price,image,size}) => {
         <NavLink to={`/product/${id}`}>
             <div className='overflow-hidden relative pt-[110%]'>
                 <img className='absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105' src={image[0]} alt={name} />
-
             </div>
             <div className='px-3 py-3'>
-                <p className='text-lg font-medium'>{name}</p>
-                <p className='text-base font-medium'>{currency}{price}</p>
-                <p className='text-base font-base'>{size.join(', ')}</p>
+                <p className='text-base font-semibold'>{name}</p>
+                <p className='text-sm'>{currency}{price}</p>
+                <p className='text-sm'>{size.join(', ')}</p>
             </div>
         </NavLink>
     </div>

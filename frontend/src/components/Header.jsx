@@ -1,14 +1,17 @@
-import main from '../assets/home_banner_1.png'
 
 const Header = (props) => {
   return (
-    <div className='w-full relative'>
-      <img src={main} alt="banner" className="w-full h-full object-contain" />
-      <div className='absolute inset-0 flex flex-col items-center justify-center '>
-          <p className='text-white text-3xl pb-3 md:text-6xl'>{props.title}</p>
+
+      <div className="py-10">
+        <div className='hidden sm:block mx-auto w-[90%]'>
+          <img className=' w-full h-full object-cover' src={props.src} alt="section" />
+        </div>
+
+        <div className='block sm:hidden relative w-full mx-auto'>
+          <img className='w-full h-full object-cover' src={props.src2} alt="section" />
+        </div>
       </div>
       
-    </div>
   )
 }
 
