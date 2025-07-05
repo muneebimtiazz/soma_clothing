@@ -1,4 +1,4 @@
-import img from '../assets/404-error.png'
+import img from '../assets/images/0407251.png'
 import { NavLink } from 'react-router-dom'
 // import { useParams } from 'react-router-dom';
 const NotFound = () => {

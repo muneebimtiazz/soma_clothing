@@ -2,7 +2,7 @@ import {useState, useContext, useEffect } from "react"
 import { ShopContext } from "../context/ShopContext"
 import { MdDeleteOutline } from "react-icons/md";
 import { NavLink } from 'react-router-dom'
-import shoppingbag from '../assets/shopping-bag.png'
+import shoppingbag from '../assets/images/0507251.svg'
 
 // {
 // polo003:{S:6}
@@ -13,7 +13,7 @@ const Cart = () => {
 
   let subtotal=null;
   const {cart,products,delivery_fee,currency,handleDelete}=useContext(ShopContext)
-  const [cartData , setCartData]=useState([]);
+  const [cartData ,setCartData]=useState([]);
 
   useEffect(()=>{
     const temp=[];
@@ -21,7 +21,7 @@ const Cart = () => {
       for (const size in cart[product]){
         if(cart[product][size]>0){
           temp.push({
-            __id:product,
+            _id:product,
             size:size,
             quantity:cart[product][size]
           })
@@ -38,12 +38,12 @@ const Cart = () => {
       {
         cartData.length===0
           ?<div className="flex flex-col items-center h-full w-full mt-30 sm:mt-40">
-            <img className="w-30 h-30" src={shoppingbag} alt="" />
+            <img className="w-50 h-50" src={shoppingbag}/>
             <p className="text-base">Your cart is empty</p>  
            </div>
           :<div className= "p-6 space-y-2.5 rounded-xl h-fit w-full lg:w-1/2">{cartData.map((cartItem) => {
               const matchedProduct = products.map(item=>{    //[{},{},{}]
-                if(item.__id===cartItem.__id){
+                if(item._id===cartItem._id){
                   return {
                     name:item.name,
                     price:item.price,
@@ -65,11 +65,11 @@ const Cart = () => {
             <div className="w-full sm:w-[30%] aspect-square relative">
               <img
                 src={matchedProduct.image}
-                alt={cartItem.__id}
+                alt={cartItem._id}
                 className="w-full h-full object-cover object-center rounded-md"
               />
             </div>
-            <div className="w-full sm:w-[70%] flex flex-col gap-2 px-1 sm:px-5">
+            <div className="w-full sm:w-[70%] flex flex-col  px-1 sm:px-5">
               <p className="text-lg sm:text-xl font-semibold">{matchedProduct.name}</p>
               <p className="text-sm text-gray-600">Category: <span className="text-black">{matchedProduct.category}</span></p>
               <p className="text-sm text-gray-600">Size: <span className="text-black">{cartItem.size}</span></p>
@@ -78,7 +78,7 @@ const Cart = () => {
               
               {/* Delete Icon */}
               <MdDeleteOutline
-                onClick={() => handleDelete(cartItem.__id, cartItem.size)}
+                onClick={() => handleDelete(cartItem._id, cartItem.size)}
                 className="text-red-600 text-2xl mt-2 hover:scale-110 transition-transform duration-200 self-start cursor-pointer"
               />
             </div>

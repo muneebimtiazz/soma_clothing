@@ -2,7 +2,7 @@ import { GiTrophyCup } from "react-icons/gi";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { MdSupportAgent } from "react-icons/md";
 import { AiOutlineSafety } from "react-icons/ai";
-import somaLogo from '../assets/logo.png';
+import somaLogo from '../assets/images/logo.png';
 import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
@@ -33,7 +33,7 @@ const Footer = () => {
 
       {/* footer */}
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 px-20 py-20 '>
+      <div className='text-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-10 p-20'>
         <div>
           <img src={somaLogo} alt="logo" />
           <p className='text-gray-600'>400 University Drive Suite 200 Coral Gables,</p>
@@ -54,14 +54,14 @@ const Footer = () => {
         </div>
         <div>
           <p className='text-gray-600'>Newsletter</p>
-          <input type="text" placeholder='Enter Your Email Address' className='w-full py-2 px-0 border-b border-gray-300 focus:border-black outline-none transition-colors bg-transparent' />
+          <input type="text" placeholder='Enter Your Email Address' className='w-full py-2 px-0 border-b border-gray-200 focus:border-black outline-none transition-colors bg-transparent' />
           <button>SUBSCRIBE</button>
         </div>
       </div>
 
       {/* copyright */}
 
-      <div className='py-2 border-t-1 '>
+      <div className='py-2 border-t-1 border-gray-200 '>
           <p className='text-gray-500 text-sm text-center'>
             &copy; {new Date().getFullYear()} Soma Clothing. All rights reserved.
           </p>

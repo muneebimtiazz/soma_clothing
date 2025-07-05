@@ -25,7 +25,7 @@ const RelatedProducts = () => {
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-5 py-10'>
         {latestProduct.map((item)=>{
           return(
-            <ProductItem key={item.id} id={item.__id} name={item.name} price={item.price} image={item.image} size={item.sizes}/>
+            <ProductItem key={item.id} id={item._id} name={item.name} price={item.price} image={item.image} size={item.sizes} discount={item.discountPercentage} og={item.originalPrice}/>
           );
         })}
       </div>

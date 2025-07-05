@@ -1,12 +1,9 @@
 
-import Banner from '../assets/hero-web-1.png'
 
 const Contact = () => {
   return (
     <div className="max-w-7xl text-xs mx-auto sm:px-6 ">
-          <div className='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
-              <img src={Banner} alt="banner" className="w-full h-auto object-contain" />
-          </div>
+
           <div className='text-center py-5 m-10 md:m-none'>
 
             <h1 className='text-2xl sm:text-4xl text-center font-semibold uppercase '>get in touch with us</h1>

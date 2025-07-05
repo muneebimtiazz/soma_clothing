@@ -1,20 +1,19 @@
 
 import { FaAward, FaUsers, FaProjectDiagram } from 'react-icons/fa'
-import Banner from '../assets/clothes-web.png'
+import webH1 from '../assets/images/0507252.avif'
+import mobH1 from '../assets/images/0507251.avif'
+import Header from '../components/Header'
 
 const About = () => {
   return (
     
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-    <div className='sm:block hidden max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
-      <img src={Banner} alt="banner" className="w-full h-auto object-contain" />
-    </div>
+    <div>
+    <Header src={webH1} src2={mobH1} title={'Daily Comfort'} subtitle={'Styles You will Reach For Again and Again'}/>
     
-
-      <section className="py-5">
+      <section className="p-10">
         <div className="bg-white p-5 rounded shadow-sm border border-gray-100">
           <h1 className='text-2xl sm:text-4xl text-center font-semibold uppercase'>about soma clothing</h1>
-          <div className="space-y-4 sm:text-left text-justify">
+          <div className="space-y-2 text-justify">
             <p>
               Founded in 2025, Soma Clothing is a contemporary men's fashion brand dedicated to blending timeless style with modern functionality. We specialize in crafting high-quality apparel that balances sophistication and comfort, offering versatile pieces designed for the dynamic lifestyles of today's men. From sharp tailored essentials to relaxed casual wear, our collections prioritize premium fabrics, precise craftsmanship, and effortless versatility ensuring every garment transitions seamlessly from work to weekends.
             </p>
@@ -28,8 +27,7 @@ const About = () => {
         </div>
       </section>
 
-
-      <section className="py-15">
+      <section className="p-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
             <FaAward className="mx-auto text-4xl text-primary mb-4" />
@@ -49,8 +47,7 @@ const About = () => {
         </div>
       </section>
 
-
-      <section className="pb-10">
+      <section className="p-10">
           <h1 className='text-2xl sm:text-4xl text-center font-semibold uppercase '>meet our team</h1>
         <p className='text-justify sm:text-center mb-10'>Meet the passionate minds behind Soma Clothing a creative team dedicated to redefining men's fashion with innovation and precision.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

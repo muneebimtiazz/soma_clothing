@@ -2,6 +2,8 @@ import { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import RelatedProducts from "../components/RelatedProducts";
+import { FaRegStar } from "react-icons/fa";
+
 
 const Product = () => {
   const { productId } = useParams(); //polo004
@@ -28,100 +30,97 @@ const Product = () => {
     );
 
   return (
-    <div className="flex-col">
-      {/* header */}
-      <div className="w-full h-30 flex justify-center items-center p-0 m-0">
-        <p>Home &gt; Product &gt; </p>
-        <p className="pl-1 font-semibold">{productId} </p>
-      </div>
+    <div className="w-[90%] mx-auto mt-10 sm:mt-5">
+      <div className="flex flex-col sm:flex-row justify-center">
+        <div className="space-y-4 w-full sm:p-10">
 
-      {/* main */}
-      <div className="sm:flex sm:justify-center m-3 sm:space-y-10 space-x-10">
-          <div className="flex sm:flex-col flex-row flex-wrap justify-center sm:justify-start gap-2 sm:gap-4 mt-4 sm:mt-0">
+          <div className="overflow-hidden relative pt-[110%] group rounded">
+            <img
+              src={image}
+              alt="Selected"
+              className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+
+          <div className="flex gap-1 sm:gap-3 flex-wrap items-center justify-between sm:justify-center">
             {productData.image.map((item, index) => (
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-[#F4F5F7] relative group cursor-pointer">
+              <div
+                key={index}
+                onClick={() => setImage(item)}
+                className="overflow-hidden w-20 cursor-pointer group rounded"
+              >
                 <img
-                  className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 "
-                  onClick={() => setImage(item)}
                   src={item}
-                  key={index}
-                  alt="#"
+                  alt={`thumb-${index}`}
+                  className=" w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
             ))}
           </div>
-          <div className="cursor-pointer">
-            <img className="w-full h-auto max-h-[300px] md:max-h-[400px] lg:max-h-[500px] object-contain" src={image} />
-          </div>
+        </div>
+        <div className="w-full p-5 sm:p-10">
+          <p>Home / {productData.Category} / {productData._id}</p>
+          {productData.stock>5?<p className="text-sm">Stock: <span className="text-green-500">{productData.stock}</span> avaliable</p>:<p className="text-sm">Stock: <span className="text-red-500">{productData.stock}</span> avaliable</p>}
           
-          <div className="mt-5 sm:mt-0 flex-col pl-3 pr-3 justify-center items-center space-y-8 ">
-          <div className="space-y-2">
-                    <h1 className='text-2xl sm:text-4xl font-semibold uppercase'>{productData.name}</h1>
-              <p className={productData.stock > 5 ? "text-green-600" : "text-red-600"}>
-                Stock : {productData.stock}
-              </p>
-              <p className="text-base">
-                {currency}
-                {productData.price}
-              </p>
-              <p className="pb-5 text-justify">{productData.description}</p>
-              <hr />
+          <p className="text-3xl font-bold">{productData.name}</p>
+          <p className="font-semibold">Price: {productData.price}{currency}</p>
+          <p className="text-sm">Material: {productData.material}</p>
+          <p className="text-sm text-justify">{productData.description}</p>
+          <div className="flex items-center gap-2 mb-10">
+            <span><FaRegStar/></span>
+            <span>{productData.rating}</span>
+            <span>({productData.reviews})</span>
           </div>
-
-
-            {/* size  */}
-            <div className="flex items-center space-x-3">
-              <p>Size:</p>
+          <div className="space-y-5">
+            <div className="flex items-center gap-2">
               {productData.sizes.map((item, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedSize(item)}
-                  className={`w-9 h-9 border rounded-md text-sm font-medium transition-colors duration-200  ${selectedSize === item? "bg-black text-white border-black" : "bg-white text-black border-gray-300 hover:bg-gray-100"}`}>
+                  className={`w-11 h-11 border rounded text-sm transition-colors duration-200  ${selectedSize === item? "bg-black text-white border-black" : "bg-white text-black hover:bg-gray-100"}`}>
                   {item}
                 </button>
               ))}
             </div>
-
-            <div className="flex items-center justify-between ">  
+            
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-5 sm:space-y-0  ">  
               <div className="flex items-center">
-                {/* decr button */}
                 <button className="w-11 h-11 border border-black rounded-l-md flex items-center justify-center text-xl font-medium 
                hover:bg-black hover:text-white transition-colors duration-200" onClick={() => count > 0 && setCount(count - 1)}>-</button>
-
-                {/* display input field */}
                 <input
                   type="text"
                   value={count}
                   className="w-16 h-11 text-center border-t border-b border-black outline-none text-base"
                   onChange={(e) => setCount(Number(e.target.value))}
                 />
-
-                {/*incr button */}
                 <button
                   className="w-11 h-11 border border-black rounded-r-md flex items-center justify-center text-xl font-medium 
                hover:bg-black hover:text-white transition-colors duration-200"
                   onClick={() => setCount(count + 1)}>+
                 </button>
               </div>
+              
+              <button
+                className="py-2 px-10 rounded text-black border-1 bg-white hover:bg-black hover:text-white transition-colors"
+                onClick={() => addToCart(productId, selectedSize, count)}>Add to Cart
+              </button>
 
-              <div>
-                {/* add to cart button */}
-                <button
-                  className="py-2 px-10 rounded text-black border-1 bg-white hover:bg-black hover:text-white transition-colors"
-                  onClick={() => addToCart(productId, selectedSize, count)}>Add to Cart
-                </button> 
-              </div>
-           
             </div>
 
-        
-          </div>
+            <div className="text-justify text-xs">
+              <p><span className="underline">Customers may return items within 30 days of delivery for a full refund or exchange.</span> Items must be unused, in their original condition, and returned with all original packaging. Return shipping costs may apply unless the item was received damaged or incorrect.</p>
+              <p><span className="underline">We offer free standard shipping on all orders over $100 (excluding taxes and discounts).</span>Orders below $100 will incur a standard shipping fee based on location. This offer applies to domestic shipping only.</p>
+            </div>
 
+            </div>
+        </div>
 
       </div>
+      
       <div>
         <RelatedProducts />
       </div>
+
     </div>
   );
 };

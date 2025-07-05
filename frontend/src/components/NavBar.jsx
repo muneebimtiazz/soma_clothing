@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 // import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
-import somaLogo from '../assets/logo.png';
+import somaLogo from '../assets/images/logo.png';
 import { ShopContext } from '../context/ShopContext';
 
 
