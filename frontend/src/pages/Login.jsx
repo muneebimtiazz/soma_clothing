@@ -1,6 +1,4 @@
-
 import { NavLink } from 'react-router-dom'
-
 const Login = () => {
   return (
     <div className='flex items-center bg-white mt-30 sm:mt-40'>

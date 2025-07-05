@@ -1,6 +1,6 @@
 
 import { FaAward, FaUsers, FaProjectDiagram } from 'react-icons/fa'
-import Banner from '../assets/about_banner_2.png'
+import Banner from '../assets/clothes-web.png'
 
 const About = () => {
   return (

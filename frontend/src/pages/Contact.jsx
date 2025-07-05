@@ -1,5 +1,5 @@
 
-import Banner from '../assets/contact_banner.png'
+import Banner from '../assets/hero-web-1.png'
 
 const Contact = () => {
   return (

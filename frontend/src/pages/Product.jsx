@@ -2,7 +2,6 @@ import { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import RelatedProducts from "../components/RelatedProducts";
-// import { NavLink } from 'react-router-dom';
 
 const Product = () => {
   const { productId } = useParams(); //polo004

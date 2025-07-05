@@ -1,5 +1,5 @@
-import web from '../assets/hero-web.avif'
-import mob from '../assets/hero-mob.avif'
+import web from '../assets/hero-web-1.png'
+import mob from '../assets/hero-mob-1.png'
 
 const Hero = () => {
   return (
