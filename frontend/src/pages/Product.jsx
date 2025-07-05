@@ -14,7 +14,7 @@ const Product = () => {
   useEffect(() => {
     if (products && products.length > 0) {
       products.forEach((item) => {
-        if (item.__id === productId) {
+        if (item._id === productId) {
           setProductData(item);
           setImage(item.image[0]); // Set first image as default
         }

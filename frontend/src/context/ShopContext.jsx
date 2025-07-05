@@ -1,5 +1,5 @@
 import {createContext,useState} from "react";
-import { products } from "../assets/assets";
+import { products } from "../assets/assets.js";
 import { toast } from "react-toastify";
 
 

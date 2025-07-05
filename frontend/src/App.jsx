@@ -1,15 +1,6 @@
 import './App.css'
 import {lazy, Suspense  } from 'react';
 
-// import Home from './pages/Home'
-// import Shop from './pages/Shop'
-// import About from './pages/About'
-// import Contact from './pages/Contact'
-// import Product from './pages/Product'
-// import Cart from './pages/Cart'
-// import Login from './pages/Login'
-// import NotFound from './pages/NotFound'
-// import Checkout from './pages/Checkout'
 import { ToastContainer} from 'react-toastify';
 import Layout from './components/Layout'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -32,22 +23,7 @@ const Loading = () => (
 );
 
 
-  const router=createBrowserRouter(
-    // [{
-    // element:<Layout/>,
-    // children:[
-    // {path:'/',element: <Home/>},
-    // {path:'/shop',element:<Shop/>},
-    // {path:'/about',element:<About/>},
-    // {path:'/contact',element:<Contact/>},
-    // {path: '/product/:productId',element:<Product /> },
-    // {path: '/cart',element:<Cart /> },
-    // {path: '/login',element:<Login /> },
-    // {path: '/checkout',element:<Checkout /> },
-    // {path:'*',element:<NotFound/>}]
-    // }]
-
-    
+  const router=createBrowserRouter( 
     [{
     element:<Layout/>,
     children:[
@@ -72,5 +48,4 @@ function App() {
   
   )
 }
-
 export default App
