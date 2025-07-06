@@ -2,7 +2,7 @@ import { GiTrophyCup } from "react-icons/gi";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { MdSupportAgent } from "react-icons/md";
 import { AiOutlineSafety } from "react-icons/ai";
-import somaLogo from '../assets/images/logo.png';
+import somaLogo from '../assets/images/logo.svg';
 import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
