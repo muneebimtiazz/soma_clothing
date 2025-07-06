@@ -2,7 +2,7 @@
 const Header = (props) => {
   return (
 
-    <div className='text-center leading-none my-10'>
+    <div className='text-center leading-none'>
 
         <div className='hidden sm:block relative w-full mx-auto'>
           <img className='w-full h-full object-cover' src={props.src}/>

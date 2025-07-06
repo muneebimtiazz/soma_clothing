@@ -18,7 +18,7 @@ const Bestseller = () => {
     },[products,visibleCount])
     
     return (
-    <div className="mx-auto px-10">
+    <div className="mx-auto px-10 mt-10">
 
       {/* heading and paragraph */}
       <div className='pb-10'>

@@ -17,7 +17,7 @@ const LatestCollection = () => {
   },[products,visibleCount])
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto mb-10">
       <div className='p-10'>
         <h1 className='text-2xl sm:text-4xl text-center font-semibold uppercase'>Latest Collections</h1>
         <p className='text-sm sm:text-base text-center text-gray-500'>The season's boldest styles engineered for heat, built for statement-making moments.</p>

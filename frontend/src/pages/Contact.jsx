@@ -3,9 +3,7 @@
 const Contact = () => {
   return (
     <div className="max-w-7xl text-xs mx-auto sm:px-6 ">
-
           <div className='text-center py-5 m-10 md:m-none'>
-
             <h1 className='text-2xl sm:text-4xl text-center font-semibold uppercase '>get in touch with us</h1>
             <p className="text-black">
               For More Information About Our Product & Services. Please Feel Free To Drop Us <br /> An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!
