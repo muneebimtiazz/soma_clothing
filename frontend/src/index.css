@@ -4,11 +4,8 @@
 body {
   font-family: "Gothic A1", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400; /* Default weight */
+  font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
-

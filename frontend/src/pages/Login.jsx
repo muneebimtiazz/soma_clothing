@@ -6,14 +6,14 @@ const Login = () => {
         <p>Welcome Back!</p>
         <p className='text-lg'>Get 50% off sale at soma clothing</p>
         <form className='flex flex-col gap-4'>
-          <input type="text" placeholder='Email' className='w-full rounded bg-gray-100 px-4 py-3 text-sm text-black placeholder-[#201E1F] focus:outline-none focus:ring-2 focus:ring-[#201E1F]'/>
-          <input type="password" placeholder='Password' className='w-full rounded bg-gray-100 px-4 py-3 text-sm text-black placeholder-[#201E1F] focus:outline-none focus:ring-2 focus:ring-[#201E1F]'/>
-      <div className="flex justify-center">
-          <button 
-            className="py-2 w-full rounded text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">
-            Show More
-          </button>
-      </div>
+          <input type="text" placeholder='Email' className='w-full rounded bg-gray-100 px-4 py-3 text-sm text-black placeholder-[#201E1F] focus:outline-none focus:ring-2 focus:ring-[#201E1F]' />
+          <input type="password" placeholder='Password' className='w-full rounded bg-gray-100 px-4 py-3 text-sm text-black placeholder-[#201E1F] focus:outline-none focus:ring-2 focus:ring-[#201E1F]' />
+          <div className="flex justify-center">
+            <button
+              className="py-2 w-full rounded text-black border-1 bg-white hover:bg-black hover:text-white transition-colors">
+              Login
+            </button>
+          </div>
         </form>
 
         <div className='text-left text-sm mt-3'>
